@@ -1,9 +1,11 @@
 import { useGetDashboardMetricsQuery } from "@/state/api";
 import { ShoppingBag } from "lucide-react";
 import React from "react";
+import Rating from "../(components)/Rating";
 
 const CardPopularProducts = () => {
   const { data: dasboardMetrics, isLoading } = useGetDashboardMetricsQuery();
+  
   return (
     <div className="row-span-3 xl:row-span-6 bg-white shadow-md rounded-2xl pb-16">
       {isLoading ? (
@@ -31,7 +33,7 @@ const CardPopularProducts = () => {
                         ${product.price}
                       </span>
                       <span className="mx-2">|</span>
-                      <div className="">rating</div>
+                      <Rating rating={product.rating || 0} />
                     </div>
                   </div>
                 </div>
@@ -40,7 +42,7 @@ const CardPopularProducts = () => {
                   <button className="p-2 rounded-full bg-blue-100 text-blue-600 mr-2">
 										<ShoppingBag className="w-4 h-4"/>
 									</button>
-									{Math.round(product.stockQuantity/100000)}k sold
+									{Math.round(product.stockQuantity/1000)}k sold
                 </div>
               </div>
             ))}
