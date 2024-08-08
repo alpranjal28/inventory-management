@@ -104,7 +104,7 @@ const Products = () => {
         <CreateProductModal
           isOpen={isModalOpen}
           onClose={() => setIsModalOpen(false)}
-          onCreate={() => handleCreateProduct}
+          onCreate={handleCreateProduct}
         />
       )}
     </div>

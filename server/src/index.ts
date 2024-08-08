@@ -7,6 +7,8 @@ import { config } from "dotenv";
 
 // route imports
 import dashboardRoutes from "./routes/dashboardRoutes";
+import productRoutes from "./routes/productRoutes";
+import userRoutes from "./routes/userRoutes";
 
 // configurations
 const dotenv = config();
@@ -21,6 +23,8 @@ app.use(cors());
 
 // routes
 app.use("/dashboard", dashboardRoutes); // http://localhost:3001/dashboard
+app.use("/products", productRoutes); // http://localhost:3001/products
+app.use("/users", userRoutes); // http://localhost:3001/users
 
 // start server
 const port = process.env.PORT || 3001;
