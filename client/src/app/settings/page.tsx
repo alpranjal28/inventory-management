@@ -68,7 +68,7 @@ const Settings = () => {
           </thead>
           <tbody className="text-gray-700">
             {userSettings.map((setting, index) => (
-              <tr className="hover:bg-blue-50">
+              <tr key={index} className="hover:bg-blue-50">
                 <td className="py-3 px-4">{setting.label}</td>
                 <td className="py-3 px-4">
                   {setting.type === "toggle" ? (

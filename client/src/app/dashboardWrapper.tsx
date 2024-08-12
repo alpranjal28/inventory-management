@@ -6,12 +6,11 @@ import Sidebar from "@/app/(components)/Sidebar";
 import StoreProvider, { useAppSelector } from "./redux";
 
 const DashboardLayout = ({ children }: { children: React.ReactNode }) => {
-  
   const isSidebarCollapsed = useAppSelector(
     (state) => state.global.isSidebarCollapsed
   );
   const isDarkMode = useAppSelector((state) => state.global.isDarkMode);
-  
+
   // because light/dark needs to be added to HTML
   useEffect(() => {
     if (isDarkMode) {
@@ -19,8 +18,8 @@ const DashboardLayout = ({ children }: { children: React.ReactNode }) => {
     } else {
       document.documentElement.classList.remove("dark");
     }
-  }, []);
-  
+  });
+
   return (
     <div
       className={`${
