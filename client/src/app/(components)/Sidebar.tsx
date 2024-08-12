@@ -1,11 +1,22 @@
 "use client";
-import { Archive, CircleDollarSign, Clipboard, Layout, LucideIcon, Menu, Settings, SlidersHorizontal, User } from "lucide-react";
+import {
+  Archive,
+  CircleDollarSign,
+  Clipboard,
+  Layout,
+  LucideIcon,
+  Menu,
+  Settings,
+  SlidersHorizontal,
+  User,
+} from "lucide-react";
 import React from "react";
 import { useDispatch } from "react-redux";
 import { useAppSelector } from "../redux";
 import { setIsSidebarCollapsed } from "@/state";
 import { usePathname } from "next/navigation";
 import Link from "next/link";
+import Image from "next/image";
 
 interface SidebarLinkProps {
   href: string;
@@ -60,9 +71,26 @@ const Sidebar = () => {
   return (
     <div className={sidebarClassNames}>
       {/* TOP LOGO */}
-      <div className="flex gap-3 justify-between md:justify-normal items-center pt-8">
-        <div className="mx-4 font-semibold">logo</div>
-        <h1 className="font-extrabold text-2xl">STOX</h1>
+      <div
+        className={`flex gap-3 justify-center md:justify-normal items-center pt-8 ${
+          isSidebarCollapsed ? "px-4" : "px-12"
+        }`}
+      >
+        <Image
+          src={`https://s3-inventory-mgmt.s3.ap-south-1.amazonaws.com/logo1.png`}
+          alt="logo"
+          width={27}
+          height={27}
+          className="rounded-full text-2xl"
+          style={{ width: "27px", height: "27px" }}
+        />
+        <h1
+          className={`${
+            isSidebarCollapsed ? "hidden" : "block"
+          } font-extrabold text-2xl`}
+        >
+          STOX
+        </h1>
         <button
           className="md:hidden px-3 py-3 mx-4 bg-gray-100 rounded-full hover:bg-blue-100"
           onClick={toggleSidebar}

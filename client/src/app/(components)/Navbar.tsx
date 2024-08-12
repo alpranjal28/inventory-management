@@ -5,6 +5,7 @@ import React from "react";
 import { useDispatch } from "react-redux";
 import { useAppSelector } from "../redux";
 import { setIsDarkMode, setIsSidebarCollapsed } from "@/state";
+import Image from "next/image";
 
 const Navbar = () => {
   const dispatch = useDispatch();
@@ -64,8 +65,17 @@ const Navbar = () => {
             </span>
           </div>
           <hr className="w-0 h-7 border border-solid border-l border-gray-300 mx-3" />
-          <div className="flex items-center gap-3 cursor-pointer">
-            <div className="w-9 h-9">image</div>
+          <div
+            className="flex items-center gap-3 cursor-pointer"
+            onClick={() => window.open("https://github.com/alpranjal28")}
+          >
+            <Image
+              src={`https://s3-inventory-mgmt.s3.ap-south-1.amazonaws.com/pp.jpg`}
+              alt="profile"
+              width={50}
+              height={50}
+              className="rounded-full h-full object-cover"
+            />
             <span className="font-semibold">alpranjal28</span>
           </div>
         </div>
