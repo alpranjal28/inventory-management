@@ -31,7 +31,6 @@ const Navbar = () => {
           onClick={toggleSidebar}
         >
           <Menu />
-          Home
         </button>
 
         <div className="relative">

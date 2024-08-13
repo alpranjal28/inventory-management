@@ -72,7 +72,7 @@ const Sidebar = () => {
     <div className={sidebarClassNames}>
       {/* TOP LOGO */}
       <div
-        className={`flex gap-3 justify-center md:justify-normal items-center pt-8 ${
+        className={`flex gap-3 justify-between md:justify-normal items-center pt-8 ${
           isSidebarCollapsed ? "px-4" : "px-12"
         }`}
       >
